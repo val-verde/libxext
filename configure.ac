@@ -10,6 +10,7 @@ AC_INIT([libXext],
 AC_CONFIG_SRCDIR([Makefile.am])
 AM_INIT_AUTOMAKE([dist-bzip2])
 
+AC_MSG_ERROR([This branch has been merged into master. Please continue with the master branch])
 AM_MAINTAINER_MODE
 
 AM_CONFIG_HEADER([config.h])
