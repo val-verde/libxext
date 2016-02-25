@@ -33,6 +33,7 @@ in this Software without prior written authorization from The Open Group.
 #include <X11/extensions/extutil.h>
 #include <X11/extensions/securproto.h>
 #include <X11/extensions/security.h>
+#include <assert.h>
 
 static XExtensionInfo _Security_info_data;
 static XExtensionInfo *Security_info = &_Security_info_data;
@@ -220,6 +221,10 @@ XSecurityGenerateAuthorization(
     unsigned long values[4];
     unsigned long *value = values;
     unsigned int nvalues;
+
+    /* values array must have a slot for each possible valuemask value */
+    assert(Ones(XSecurityAllAuthorizationAttributes)
+           == (sizeof(values) / sizeof(values[0])));
 
     *auth_id_return = 0;  /* in case we fail */
 
