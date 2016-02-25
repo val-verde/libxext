@@ -217,7 +217,7 @@ XSecurityGenerateAuthorization(
     register xSecurityGenerateAuthorizationReq *req;
     xSecurityGenerateAuthorizationReply rep;
     Xauth *auth_return;
-    unsigned long values[3];
+    unsigned long values[4];
     unsigned long *value = values;
     unsigned int nvalues;
 
