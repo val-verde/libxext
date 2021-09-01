@@ -350,7 +350,7 @@ XagCreateAssociation(Display* dpy, Window* window_return, void* system_window)
     *window_return = req->window = XAllocID(dpy);
     req->window_type = XagWindowTypeWin32;
     req->system_window_len = sizeof(HWND);
-    Data32 (dpy, (long*) tmp, 1L);
+    Data32 (dpy, (long*) (intptr_t)tmp, 1L);
     req->length++;
     UnlockDisplay(dpy);
     SyncHandle();
